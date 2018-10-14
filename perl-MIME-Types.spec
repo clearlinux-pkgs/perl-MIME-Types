@@ -4,13 +4,13 @@
 #
 Name     : perl-MIME-Types
 Version  : 2.17
-Release  : 1
+Release  : 2
 URL      : https://cpan.metacpan.org/authors/id/M/MA/MARKOV/MIME-Types-2.17.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MA/MARKOV/MIME-Types-2.17.tar.gz
 Summary  : 'Definition of MIME types'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
-Requires: perl-MIME-Types-man
+BuildRequires : buildreq-cpan
 
 %description
 MIME::Types
@@ -19,12 +19,13 @@ A start for a more detailed data-structure to keep knowledge
 about various data types are defined by MIME.  Some basic
 treatments with mime types are implemented.
 
-%package man
-Summary: man components for the perl-MIME-Types package.
-Group: Default
+%package dev
+Summary: dev components for the perl-MIME-Types package.
+Group: Development
+Provides: perl-MIME-Types-devel = %{version}-%{release}
 
-%description man
-man components for the perl-MIME-Types package.
+%description dev
+dev components for the perl-MIME-Types package.
 
 
 %prep
@@ -53,9 +54,9 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -64,15 +65,15 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/MIME/Type.pm
-/usr/lib/perl5/site_perl/5.26.1/MIME/Type.pod
-/usr/lib/perl5/site_perl/5.26.1/MIME/Types.pm
-/usr/lib/perl5/site_perl/5.26.1/MIME/Types.pod
-/usr/lib/perl5/site_perl/5.26.1/MIME/types.db
-/usr/lib/perl5/site_perl/5.26.1/MojoX/MIME/Types.pm
-/usr/lib/perl5/site_perl/5.26.1/MojoX/MIME/Types.pod
+/usr/lib/perl5/vendor_perl/5.26.1/MIME/Type.pm
+/usr/lib/perl5/vendor_perl/5.26.1/MIME/Type.pod
+/usr/lib/perl5/vendor_perl/5.26.1/MIME/Types.pm
+/usr/lib/perl5/vendor_perl/5.26.1/MIME/Types.pod
+/usr/lib/perl5/vendor_perl/5.26.1/MIME/types.db
+/usr/lib/perl5/vendor_perl/5.26.1/MojoX/MIME/Types.pm
+/usr/lib/perl5/vendor_perl/5.26.1/MojoX/MIME/Types.pod
 
-%files man
+%files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/MIME::Type.3
 /usr/share/man/man3/MIME::Types.3
