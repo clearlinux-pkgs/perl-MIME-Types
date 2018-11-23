@@ -65,13 +65,13 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.26.1/MIME/Type.pm
-/usr/lib/perl5/vendor_perl/5.26.1/MIME/Type.pod
-/usr/lib/perl5/vendor_perl/5.26.1/MIME/Types.pm
-/usr/lib/perl5/vendor_perl/5.26.1/MIME/Types.pod
-/usr/lib/perl5/vendor_perl/5.26.1/MIME/types.db
-/usr/lib/perl5/vendor_perl/5.26.1/MojoX/MIME/Types.pm
-/usr/lib/perl5/vendor_perl/5.26.1/MojoX/MIME/Types.pod
+/usr/lib/perl5/vendor_perl/5.28.0/MIME/Type.pm
+/usr/lib/perl5/vendor_perl/5.28.0/MIME/Type.pod
+/usr/lib/perl5/vendor_perl/5.28.0/MIME/Types.pm
+/usr/lib/perl5/vendor_perl/5.28.0/MIME/Types.pod
+/usr/lib/perl5/vendor_perl/5.28.0/MIME/types.db
+/usr/lib/perl5/vendor_perl/5.28.0/MojoX/MIME/Types.pm
+/usr/lib/perl5/vendor_perl/5.28.0/MojoX/MIME/Types.pod
 
 %files dev
 %defattr(-,root,root,-)
