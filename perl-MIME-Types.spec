@@ -4,25 +4,27 @@
 #
 Name     : perl-MIME-Types
 Version  : 2.17
-Release  : 10
+Release  : 11
 URL      : https://cpan.metacpan.org/authors/id/M/MA/MARKOV/MIME-Types-2.17.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MA/MARKOV/MIME-Types-2.17.tar.gz
-Summary  : 'Definition of MIME types'
+Summary  : Perl/CPAN Module MIME::Types : Information and processing MIME types
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
 BuildRequires : buildreq-cpan
 
 %description
-MIME::Types
-===========
-A start for a more detailed data-structure to keep knowledge
-about various data types are defined by MIME.  Some basic
-treatments with mime types are implemented.
+# MIME::Types
+* My extended documentation: <http://perl.overmeer.net/CPAN/>
+* Development via GitHub: <https://github.com/markov2/perl5-MIME-Types>
+* Download from CPAN: <ftp://ftp.cpan.org/pub/CPAN/authors/id/M/MA/MARKOV/>
+* Indexed from CPAN: <http://search.cpan.org/~markov/MIME-Types/>
+and <https://metacpan.org/release/MIME-Types>
 
 %package dev
 Summary: dev components for the perl-MIME-Types package.
 Group: Development
 Provides: perl-MIME-Types-devel = %{version}-%{release}
+Requires: perl-MIME-Types = %{version}-%{release}
 
 %description dev
 dev components for the perl-MIME-Types package.
