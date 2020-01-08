@@ -4,21 +4,21 @@
 #
 Name     : perl-MIME-Types
 Version  : 2.17
-Release  : 11
+Release  : 12
 URL      : https://cpan.metacpan.org/authors/id/M/MA/MARKOV/MIME-Types-2.17.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MA/MARKOV/MIME-Types-2.17.tar.gz
-Summary  : Perl/CPAN Module MIME::Types : Information and processing MIME types
+Summary  : 'Definition of MIME types'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
+Requires: perl-MIME-Types-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
-# MIME::Types
-* My extended documentation: <http://perl.overmeer.net/CPAN/>
-* Development via GitHub: <https://github.com/markov2/perl5-MIME-Types>
-* Download from CPAN: <ftp://ftp.cpan.org/pub/CPAN/authors/id/M/MA/MARKOV/>
-* Indexed from CPAN: <http://search.cpan.org/~markov/MIME-Types/>
-and <https://metacpan.org/release/MIME-Types>
+MIME::Types
+===========
+A start for a more detailed data-structure to keep knowledge
+about various data types are defined by MIME.  Some basic
+treatments with mime types are implemented.
 
 %package dev
 Summary: dev components for the perl-MIME-Types package.
@@ -30,14 +30,24 @@ Requires: perl-MIME-Types = %{version}-%{release}
 dev components for the perl-MIME-Types package.
 
 
+%package perl
+Summary: perl components for the perl-MIME-Types package.
+Group: Default
+Requires: perl-MIME-Types = %{version}-%{release}
+
+%description perl
+perl components for the perl-MIME-Types package.
+
+
 %prep
 %setup -q -n MIME-Types-2.17
+cd %{_builddir}/MIME-Types-2.17
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -47,7 +57,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -67,16 +77,19 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/MIME/Type.pm
-/usr/lib/perl5/vendor_perl/5.28.2/MIME/Type.pod
-/usr/lib/perl5/vendor_perl/5.28.2/MIME/Types.pm
-/usr/lib/perl5/vendor_perl/5.28.2/MIME/Types.pod
-/usr/lib/perl5/vendor_perl/5.28.2/MIME/types.db
-/usr/lib/perl5/vendor_perl/5.28.2/MojoX/MIME/Types.pm
-/usr/lib/perl5/vendor_perl/5.28.2/MojoX/MIME/Types.pod
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/MIME::Type.3
 /usr/share/man/man3/MIME::Types.3
 /usr/share/man/man3/MojoX::MIME::Types.3
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/MIME/Type.pm
+/usr/lib/perl5/vendor_perl/5.30.1/MIME/Type.pod
+/usr/lib/perl5/vendor_perl/5.30.1/MIME/Types.pm
+/usr/lib/perl5/vendor_perl/5.30.1/MIME/Types.pod
+/usr/lib/perl5/vendor_perl/5.30.1/MIME/types.db
+/usr/lib/perl5/vendor_perl/5.30.1/MojoX/MIME/Types.pm
+/usr/lib/perl5/vendor_perl/5.30.1/MojoX/MIME/Types.pod
