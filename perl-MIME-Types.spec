@@ -4,7 +4,7 @@
 #
 Name     : perl-MIME-Types
 Version  : 2.17
-Release  : 13
+Release  : 14
 URL      : https://cpan.metacpan.org/authors/id/M/MA/MARKOV/MIME-Types-2.17.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MA/MARKOV/MIME-Types-2.17.tar.gz
 Summary  : 'Definition of MIME types'
@@ -86,10 +86,10 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.2/MIME/Type.pm
-/usr/lib/perl5/vendor_perl/5.30.2/MIME/Type.pod
-/usr/lib/perl5/vendor_perl/5.30.2/MIME/Types.pm
-/usr/lib/perl5/vendor_perl/5.30.2/MIME/Types.pod
-/usr/lib/perl5/vendor_perl/5.30.2/MIME/types.db
-/usr/lib/perl5/vendor_perl/5.30.2/MojoX/MIME/Types.pm
-/usr/lib/perl5/vendor_perl/5.30.2/MojoX/MIME/Types.pod
+/usr/lib/perl5/vendor_perl/5.30.3/MIME/Type.pm
+/usr/lib/perl5/vendor_perl/5.30.3/MIME/Type.pod
+/usr/lib/perl5/vendor_perl/5.30.3/MIME/Types.pm
+/usr/lib/perl5/vendor_perl/5.30.3/MIME/Types.pod
+/usr/lib/perl5/vendor_perl/5.30.3/MIME/types.db
+/usr/lib/perl5/vendor_perl/5.30.3/MojoX/MIME/Types.pm
+/usr/lib/perl5/vendor_perl/5.30.3/MojoX/MIME/Types.pod
