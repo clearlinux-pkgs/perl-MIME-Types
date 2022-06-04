@@ -4,7 +4,7 @@
 #
 Name     : perl-MIME-Types
 Version  : 2.22
-Release  : 26
+Release  : 27
 URL      : https://cpan.metacpan.org/authors/id/M/MA/MARKOV/MIME-Types-2.22.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MA/MARKOV/MIME-Types-2.22.tar.gz
 Summary  : 'Definition of MIME types'
@@ -83,10 +83,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/MIME/Type.pm
-/usr/lib/perl5/vendor_perl/5.34.0/MIME/Type.pod
-/usr/lib/perl5/vendor_perl/5.34.0/MIME/Types.pm
-/usr/lib/perl5/vendor_perl/5.34.0/MIME/Types.pod
-/usr/lib/perl5/vendor_perl/5.34.0/MIME/types.db
-/usr/lib/perl5/vendor_perl/5.34.0/MojoX/MIME/Types.pm
-/usr/lib/perl5/vendor_perl/5.34.0/MojoX/MIME/Types.pod
+/usr/lib/perl5/*
