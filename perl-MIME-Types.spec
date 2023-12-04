@@ -4,7 +4,7 @@
 #
 Name     : perl-MIME-Types
 Version  : 2.24
-Release  : 32
+Release  : 33
 URL      : https://cpan.metacpan.org/authors/id/M/MA/MARKOV/MIME-Types-2.24.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MA/MARKOV/MIME-Types-2.24.tar.gz
 Summary  : 'Definition of MIME types'
