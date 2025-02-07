@@ -6,10 +6,10 @@
 # autospec commit: 94c6be0
 #
 Name     : perl-MIME-Types
-Version  : 2.26
-Release  : 37
-URL      : https://cpan.metacpan.org/authors/id/M/MA/MARKOV/MIME-Types-2.26.tar.gz
-Source0  : https://cpan.metacpan.org/authors/id/M/MA/MARKOV/MIME-Types-2.26.tar.gz
+Version  : 2.27
+Release  : 38
+URL      : https://cpan.metacpan.org/authors/id/M/MA/MARKOV/MIME-Types-2.27.tar.gz
+Source0  : https://cpan.metacpan.org/authors/id/M/MA/MARKOV/MIME-Types-2.27.tar.gz
 Summary  : 'Definition of MIME types'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
@@ -20,7 +20,7 @@ BuildRequires : buildreq-cpan
 %define debug_package %{nil}
 
 %description
-=   Generated on Wed Dec  9 10:29:07 2020 by OODoc 2.02
+=   Generated on Fri Feb  7 11:08:33 2025 by OODoc 2.03
 There are various ways to install this module:
 
 %package dev
@@ -43,10 +43,10 @@ perl components for the perl-MIME-Types package.
 
 
 %prep
-%setup -q -n MIME-Types-2.26
-cd %{_builddir}/MIME-Types-2.26
+%setup -q -n MIME-Types-2.27
+cd %{_builddir}/MIME-Types-2.27
 pushd ..
-cp -a MIME-Types-2.26 buildavx2
+cp -a MIME-Types-2.27 buildavx2
 popd
 
 %build
